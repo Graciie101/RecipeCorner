@@ -7,7 +7,7 @@ const Recipe = ({ title, calories, image, ingredients }) => {
   return (
     <div className =  {style.recipe}>
       <h1>{title}</h1> 
-      <ol>{ingredients && ingredients.map(ingredient => <li> {ingredient.text}</li>)}</ol>
+      <ol>{Array.isArray(ingredients) && ingredients.map(ingredient => <li> {ingredient.text}</li>)}</ol>
       <p>This recipe contains {calories} calories.</p>
       <img src={image} alt='' />
     </div>
